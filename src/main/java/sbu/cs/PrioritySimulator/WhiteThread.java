@@ -25,6 +25,7 @@ public class WhiteThread extends ColorThread {
     public void run() {
         try
         {
+            Thread.currentThread().setPriority(MIN_PRIORITY);
             Thread.sleep(delay);
             CDLatch.countDown();    // use countDown() method of the CountDownLatch
             printMessage();

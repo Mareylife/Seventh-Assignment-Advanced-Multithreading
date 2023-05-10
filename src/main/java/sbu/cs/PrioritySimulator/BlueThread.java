@@ -25,6 +25,7 @@ public class BlueThread extends ColorThread {
     public void run() {
         try
         {
+            Thread.currentThread().setPriority(NORM_PRIORITY);
             Thread.sleep(delay);
             CDLatch.countDown();    // use countDown() method of the CountDownLatch
             printMessage();

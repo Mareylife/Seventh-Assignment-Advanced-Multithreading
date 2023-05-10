@@ -24,6 +24,7 @@ public class BlackThread extends ColorThread {
     public void run() {
         try
         {
+            Thread.currentThread().setPriority(MAX_PRIORITY);
             Thread.sleep(delay);
             CDLatch.countDown();    // use countDown() method of the CountDownLatch
             printMessage();
